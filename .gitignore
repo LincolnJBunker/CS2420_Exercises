@@ -1,0 +1,41 @@
+# Ignore IDE-specific files
+.vscode/
+.classpath
+.project
+.settings/
+
+# Ignore compiled Java files
+bin/
+**/*.class
+
+# Ignore dependency libraries if they shouldn't be tracked
+lib/*.jar
+
+# Ignore debug files
+debug/
+
+# Ignore test output
+test-output/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore build tools
+target/
+out/
+
+# Ignore Maven and Gradle files (if using them)
+*.iml
+*.gradle
+.gradle/
+mvnw*
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
