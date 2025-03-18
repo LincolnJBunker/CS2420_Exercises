@@ -2,7 +2,6 @@ package ceBinarySearchTree;
 
 import java.util.NoSuchElementException;
 
-import edu.princeton.cs.algs4.BST;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
@@ -438,12 +437,26 @@ public class BSTdeluxe<Key extends Comparable<Key>, Value> {
         return keys;
     }
     
+    /**
+     * Returns the keys in the BST in pre-order traversal.
+     * 
+     * @return the keys in the BST in pre-order traversal
+     */
     public Iterable<Key> preOrder() {
         Queue<Key> keys = new Queue<Key>();
         preOrderHelper(root, keys);
         return keys;
     }
 
+    /**
+     * Helper method for pre-order traversal.
+     * Utilized recursion to traverse the tree in pre-order.
+     * Visits each node before its children.
+     * Left subtree is visited first, then right subtree.
+     * 
+     * @param node node to start traversal from
+     * @param queue queue to store keys in pre-order traversal
+     */
     private void preOrderHelper(Node node, Queue<Key> queue) {
         if (node == null) {
             return;
@@ -453,12 +466,26 @@ public class BSTdeluxe<Key extends Comparable<Key>, Value> {
         preOrderHelper(node.right, queue); // Right subtree
     }
     
+    /**
+     * Returns the keys in the BST in in-order traversal.
+     * 
+     * @return the keys in the BST in in-order traversal
+     */
     public Iterable<Key> inOrder() {
         Queue<Key> keys = new Queue<Key>();
         inOrderHelper(root, keys);
         return keys;
     }
 
+    /**
+     * Helper method for in-order traversal.
+     * Utilized recursion to traverse the tree in in-order.
+     * Visits each node between its children.
+     * Left subtree is visited first, then the node, then right subtree.
+     * 
+     * @param node node to start traversal from
+     * @param queue queue to store keys in in-order traversal
+     */
     public void inOrderHelper(Node node, Queue<Key> queue) {
         if (node == null) {
             return;
@@ -468,12 +495,26 @@ public class BSTdeluxe<Key extends Comparable<Key>, Value> {
         inOrderHelper(node.right, queue); // Right subtree
     }
     
+    /**
+     * Returns the keys in the BST in post-order traversal.
+     * 
+     * @return the keys in the BST in post-order traversal
+     */
     public Iterable<Key> postOrder() {
         Queue<Key> keys = new Queue<Key>();
         postOrderHelper(root, keys);
         return keys;
     }
 
+    /**
+     * Helper method for post-order traversal.
+     * Utilized recursion to traverse the tree in post-order.
+     * Visits each node after its children.
+     * Left subtree is visited first, then right subtree, then the node.
+     * 
+     * @param node node to start traversal from
+     * @param queue queue to store keys in post-order traversal
+     */
     public void postOrderHelper(Node node, Queue<Key> queue) {
         if (node == null) {
             return;
